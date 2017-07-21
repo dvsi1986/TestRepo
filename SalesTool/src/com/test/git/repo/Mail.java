@@ -12,6 +12,8 @@ public class Mail {
 	private static void dispayGreetings() {
 		System.out.println("HELLO	 HAPPY SALES PEOPLE");
 		System.out.println("THIS APP SHOWS SALES DATA");
+		System.out.println("**************************");
+		System.out.println("I would like to add more code !!");
 	}
 
 }
