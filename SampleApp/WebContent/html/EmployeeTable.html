@@ -1,0 +1,16 @@
+<table border="1" style="border-bottom-color: graytext;">
+	<thead style="background-color: fuchsia;">
+		<tr>
+			<th>Name</th>
+			<th>Gender</th>
+			<th>Salary(Currency)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="employee in employees">
+			<td>{{employee.name}}</td>
+			<td>{{employee.gender}}</td>
+			<td>{{employee.salary}}</td>
+		</tr>
+	</tbody>
+</table>

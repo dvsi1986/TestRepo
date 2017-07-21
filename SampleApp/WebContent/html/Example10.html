@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<!--ng-include directives  in Angular -->
+
+<script type="text/javascript" src="../angularjs/angular.min.js"></script>
+<script type="text/javascript" src="../js/employeedata.js"></script>
+
+</head>
+<body ng-app="myApp" ng-controller="myCtrl"
+	style="font-family: sans-serif;">
+	<!-- Select View : <select ng-model="employeeView">
+		<option value="EmployeeTable.html">Table</option>
+		<option value="EmployeeList.html">List</option>
+	</select> -->
+	<div ng-include="employeeView"></div>
+</body>
+</html>

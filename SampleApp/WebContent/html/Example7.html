@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<!-- Filters  in Angular -->
+<script type="text/javascript" src="../angularjs/angular.min.js"></script>
+<script type="text/javascript" src="../js/filters.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/styles.css">
+
+</head>
+<body ng-app="myApp" ng-controller="myCtrl" style="font-family: sans-serif;">
+
+	<div>
+	Number of Rows To display: <input type="number" min="0" max="5" step="1" ng-model="rowLimit"/>
+		Sort By Field(Order By) : 
+						<select ng-model="sortColumn">
+							<option	value="name">Name (ASC)</option>
+							<option value="-dob">Date Of Birth(DESC)</option>
+							<option value="gender">Gender(ASC)</option>
+							<option value="-salary">Salary(DESC)</option>
+						</select>
+						
+		Search Text : <input type="text" ng-model="searchText" placeholder="Search Text Here"/>
+		<br>
+		Name : <input type="text" ng-model="searchText.name" placeholder="Search Name Here"/>
+		Salary : <input type="text" ng-model="searchText.salary" placeholder="Search Salary Here"/> 
+		<input type="checkbox" ng-model="exactMatch"> 
+		<table border="1" style="border-bottom-color: graytext;">
+			<thead style="background-color: fuchsia;">
+				<tr>
+					<th ng-click="sortData('name')">
+					Name <div ng-click="getClass('name')"></div>
+					</th>
+					
+					<th ng-click="sortData('dob')">
+					Date Of Birth <div ng-click="getClass('dob')"></div>
+					</th>
+					
+					<th ng-click="sortData('gender')">
+					Gender <div ng-click="getClass('gender')"></div>
+					</th>
+					<th ng-click="sortData('salary')">
+					Salary(Number) <div ng-click="getClass('salary')"></div>
+					</th>
+					
+					<th ng-click="sortData('salary')">
+					Salary(Currency) <div ng-click="getClass('salary')"></div>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="employee in employees | limitTo:rowLimit |orderBy:sortColumn:reverseSort | filter:searchText:exactMatch">
+					<td>{{employee.name | uppercase}}</td>
+					<td>{{employee.dob | date:'MM/dd/yyyy' }}</td>
+					<td>{{employee.gender | lowercase}}</td>
+					<td>{{employee.salary |number:2}}</td>
+					<td>{{employee.salary |currency:"£"}}</td>
+				</tr>
+			</tbody>
+	</div>
+	<br/>
+	<div>
+		<ul>
+			<li ng-repeat="country in countries">{{country.country}}
+				<ul>
+					<li ng-repeat="city in country.cities">{{city.name}}</li>
+				</ul>
+			</li>
+		</ul>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<!-- ng-src directive usage -->
+<script type="text/javascript" src="../angularjs/angular.js"></script>
+<script type="text/javascript" src="../js/ng-src.js"></script>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="myCtrl">
+		 <!-- <img alt="Angular Js" src="../images/angular.png" width="600px" height="400px"> --> 
+			<!-- <img alt="{{angsrc.title}}" src="{{ angsrc.imgpath }}" width="600px" height="400px"> --> 
+		<img alt="{{angsrc.title}}" ng-src="{{ angsrc.imgpath }}" width="600px" height="400px"> 
+	</div>
+</body>
+</html>

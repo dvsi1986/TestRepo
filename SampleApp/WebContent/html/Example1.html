@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Insert title here</title>
+<!--ng-app and expressions  Directives and Angular sample Application and how it works -->
+<script type="text/javascript" src="../angularjs/angular.min.js"></script>
+</head>
+<body ng-app>
+	<div>
+		<!-- {{ expression }}  expression should present in double curly braces. -->
+		10+20 = {{10+20}}
+	</div>
+
+	<div>
+		10+40 = {{10+40}} </br>boolean test : {{1==1}} <br>
+		
+		document.writeln("Java Script Object "); <br>
+		
+		 {{		{name:"Sai",age:"30"}.name	 }} <br>
+		 
+		<!-- Arrays of Strings -->
+		{{ [ 'Siva','Sai','Krishna'][2]}} <br>
+		<!-- Arrays  Javascript Objects -->
+		{{
+				[
+					{name:"Sai",age:"30"},
+					{name:"Swathi",age:"20"},
+					{name:"Krishna",age:"23"}
+				][1].name
+		}}
+
+	</div>
+	<div ng-init="number1=10;number2=20">
+	Multiplication of Two Numbers : {{ number1*number2 }}
+	</div>
+	
+	<div ng-init="student1 = { firstname : 'Siva',lastname : 'Krishna',gender : 'Male',address : 'Hyderbad'}">
+	First Name : {{student1.firstname}} <br>
+	Last Name : {{student1.lastname}}<br>
+	Gender : {{student1.gender}}<br>
+	Address : {{student1.address}}<br>
+	</div>
+</body>
+</html>

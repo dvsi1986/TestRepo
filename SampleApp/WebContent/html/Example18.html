@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Routing service in Angular JS -->
+<title>AngularJS Routing Example</title>
+<script type="text/javascript" src="../angularjs/angular.js"></script>
+<script type="text/javascript" src="../js/$scopeAnd$rooteScope.js"></script>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="redColorController">
+		Root Scope Color	: {{rootScopeColor}} <br>
+		Red Scope Color     : {{redColor}} <br>
+		Green Scope Color   : {{greenColor}}
+	</div>
+	<br>
+	<br>
+	<div ng-controller="greenColorController">
+		Root Scope Color  : {{rootScopeColor}} <br>
+		Green Scope Color : {{greenColor}} <br>
+		Red Scope Color   : {{redColor}}
+	</div>
+	
+	<h4>Instead of showing empty message, for the out of the scope object as empty show the some message.like below. </h4>
+	
+	<div ng-controller="redColorController">
+		Root Scope Color	: {{rootScopeColor}} <br>
+		Red Scope Color     : {{redColor}} <br>
+		Green Scope Color   : <span style="color: red;" ng-show="greeColor == undefined">Green Color is undefined ..</span>
+	</div>
+	<br>
+	<br>
+	<div ng-controller="greenColorController">
+		Root Scope Color  : {{rootScopeColor}} <br>
+		Green Scope Color : {{greenColor}} <br>
+		Red Scope Color   : <span style="color: red;" ng-show="redColor == undefined">Red Color is undefined ..</span>
+	</div>
+</body>
+</html>
+

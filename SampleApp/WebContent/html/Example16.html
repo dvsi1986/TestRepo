@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- anchorScroll service in Angular JS -->
+<title>AngularJS $anchorScroll Example</title>
+<script type="text/javascript" src="../angularjs/angular.min.js"></script>
+<script type="text/javascript" src="../js/anchorScrollService.js"></script>
+<style type="text/css">
+div {
+	display: block;
+	font-size: xx-large;
+	height: 350px;
+	width: 400px;
+	border: 1px solid black;
+	padding: 10px;
+	overflow-y: scroll;
+}
+</style>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+	<span ng-repeat="country in countries">
+		<button ng-click="scrollTo(country.country);">
+			{{country.country}}</button>
+	</span>
+	<br>
+	<br>
+	<br>
+	<div>
+		<fieldset  ng-repeat="country in countries"  id="{{country.country}}">
+			<legend>{{country.country}}</legend>
+			<ul>
+				<li ng-repeat="city in country.cities">{{city.name}}</li>
+			</ul>
+	</div>
+	</fieldset>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<!-- Modules and Controllers creation and usage  -->
+<script type="text/javascript" src="../angularjs/angular.min.js"></script>
+<script type="text/javascript" src="../js/app.js"></script>
+
+</head>
+<body ng-app="myApp">
+	<div ng-controller="myCtrl">
+		{{message}}<br>
+		 {{message}}
+	</div>
+	<br />
+	
+	<div ng-controller="myCtrl1">
+		{{greetings}}
+	</div>
+	<br />
+	
+	<div ng-controller="myCtrl2">
+		User Name : <input type="text" ng-model="name">
+		{{usermessage}}{{name}}
+	</div>
+
+	<div ng-controller="myCtrl3">
+		<div>First Name : {{student.firstname}}</div>
+		<div>Last name : {{student.lastname}}</div>
+		<div>Gender : {{student.gender}}</div>
+		<div>Address : {{student.address}}</div>
+	</div>
+</body>
+</html>

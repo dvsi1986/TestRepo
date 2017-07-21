@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<!--ng-hide & ng-show directives  in Angular -->
+
+
+<script type="text/javascript" src="../angularjs/angular.min.js"></script>
+<script type="text/javascript" src="../js/custom-filters.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/styles.css">
+
+</head>
+<body ng-app="myApp" ng-controller="myCtrl" style="font-family: sans-serif;">
+
+	<div>
+	<input type="checkbox" ng-model="hideSalary"> Hide Salary
+	<input type="checkbox" ng-model="showGender"> Show Gender
+		<table border="1" style="border-bottom-color: graytext;">
+			<thead style="background-color: fuchsia;">
+				<tr>
+				    <th>Name</th>
+					<th ng-show="showGender">Gender</th>
+					<th ng-hide="hideSalary">Salary(Currency)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="employee in employees">
+					<td>{{employee.name}}</td>
+					<td ng-show="showGender">{{employee.gender |genderFilter}}</td>
+					<td ng-hide="hideSalary">{{employee.salary}}</td>
+				</tr>
+			</tbody>
+	</div>
+	<br/>
+	<div>
+		<ul>
+			<li ng-repeat="country in countries">{{country.country}}
+				<ul>
+					<li ng-repeat="city in country.cities">{{city.name}}</li>
+				</ul>
+			</li>
+		</ul>
+
+	</div>
+</body>
+</html>

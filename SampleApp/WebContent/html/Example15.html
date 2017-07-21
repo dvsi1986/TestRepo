@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- anchorScroll service in Angular JS -->
+<title>AngularJS $anchorScroll Example</title>
+<script
+	SRC="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script>
+<script>
+	var app = angular.module("AnchorScrollInitialization", []);
+	app.controller("AnchorScrollController", [ '$location', '$anchorScroll',
+			'$scope', function($location, $anchorScroll, $scope) {
+				$scope.moveTop = function() {
+					$location.hash('upLink');
+					$anchorScroll();
+				}
+				$scope.moveDown = function() {
+					$location.hash('downLink');
+					$anchorScroll();
+				}
+			} ]);
+</script>
+</head>
+<body style="background-color: #DDE4E9; font-family: arial;"
+	ng-app="AnchorScrollInitialization">
+	<fieldset style="background-color: #DDE4E9;">
+		<legend>AngulerJS $anchorScroll Service Example</legend>
+		<div ng-controller="AnchorScrollController">
+
+			<a href="" id="upLink" ng-click="moveDown()">Go to down</a>
+			<div style="height: 1000px">
+				<p
+					style="font-family: Arial; color: yellow; background: steelblue; padding: 3px; width: 350px;">Down
+					Link</p>
+			</div>
+			<div>
+				<p>When called, it scrolls to the element related to the
+					specified hash or (if omitted) to the current value of
+					$location.hash(), according to the rules specified in the HTML5
+					spec. It also watches the $location.hash() and automatically
+					scrolls to match any anchor whenever it changes. This can be
+					disabled by calling $anchorScrollProvider.disableAutoScrolling().
+
+					Additionally, you can use its yOffset property to specify a
+					vertical scroll-offset (either fixed or dynamic).</p>
+				<br> <br>
+
+				<p>If set, specifies a vertical scroll-offset. This is often
+					useful when there are fixed positioned elements at the top of the
+					page, such as navbars, headers etc. yOffset can be specified in
+					various ways: number: A fixed number of pixels to be used as
+					offset. function: A getter function called everytime
+					$anchorScroll() is executed. Must return a number representing the
+					offset (in pixels). jqLite: A jqLite/jQuery element to be used for
+					specifying the offset. The distance from the top of the page to the
+					element's bottom will be used as offset. Note: The element will be
+					taken into account only as long as its position is set to fixed.
+					This option is useful, when dealing with responsive navbars/headers
+					that adjust their height and/or positioning according to the
+					viewport's size.</p>
+
+			</div>
+			<a href="" id="downLink" ng-click="moveTop()">Go to Top</a>
+			<p
+				style="font-family: Arial; color: yellow; background: steelblue; padding: 3px; width: 350px;">Up
+				Link</p>
+
+		</div>
+	</fieldset>
+</body>
+</html>

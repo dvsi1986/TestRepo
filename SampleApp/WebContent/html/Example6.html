@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<!-- Handling the events in Angular -->
+<script type="text/javascript" src="../angularjs/angular.min.js"></script>
+<script type="text/javascript" src="../js/ng-click.js"></script>
+
+</head>
+<body ng-app="myApp" ng-controller="myCtrl" style="font-family: sans-serif;">
+	<div>
+		<table border="1" style="border-bottom-color: graytext;">
+			<thead style="background-color: fuchsia;">
+				<tr>
+					<th>Technology</th>
+					<th>Likes</th>
+					<th>DisLikes</th>
+					<th>Likes/DisLikes</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="technology in technologies">
+					<td>{{technology.name}}</td>
+					<td>{{technology.likes}}</td>
+					<td>{{technology.dislikes}}</td>
+					<td>
+					<input type="submit" ng-click="likesIncrement(technology);" value="Likes"/>
+					<input type="submit" ng-click="disLikesIncrement(technology);" value="DisLikes"/>
+					</td>
+				</tr>
+			</tbody>
+	</div>
+	<br/>
+	<div>
+		<ul>
+			<li ng-repeat="country in countries">{{country.country}}
+				<ul>
+					<li ng-repeat="city in country.cities">{{city.name}}</li>
+				</ul>
+
+			</li>
+		</ul>
+
+	</div>
+</body>
+</html>
