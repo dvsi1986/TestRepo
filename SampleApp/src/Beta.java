@@ -13,6 +13,5 @@ public class Beta extends Alpha {
 		sb.append("abc");
 		System.out.println(sb+" "+s1);
 		System.out.println(s1);
-		System.out.println(sb);
 	}
 }
