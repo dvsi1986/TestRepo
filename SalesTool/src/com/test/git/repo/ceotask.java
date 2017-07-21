@@ -7,6 +7,9 @@ public class ceotask {
 			System.out.println("i value - " + i*20);
 			
 		}
+		System.out.println("i value - ");
+	
+				
 	}
 
 }
