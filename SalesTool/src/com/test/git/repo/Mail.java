@@ -7,6 +7,7 @@ public class Mail {
 
 		dispayGreetings();
 		System.out.println("-----------");
+		s.displayData();
 	}
 
 	private static void dispayGreetings() {
