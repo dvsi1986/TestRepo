@@ -4,8 +4,9 @@ public class Main {
 
 	public static void main(String[] args) {
 		String s[]={"siva","Krishna","Sai"};
-		for(String ss:s){
-			System.out.println("Name-> "+ss);
+		for(int i=0;i<s.length;i++){
+			System.out.println("Lords Names ---> "+s[i]);
+			System.out.println("Parents are the demi god's");
 		}
 	}
 
